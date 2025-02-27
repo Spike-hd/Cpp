@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 16:01:14 by spike             #+#    #+#             */
-/*   Updated: 2025/02/27 17:54:57 by spike            ###   ########.fr       */
+/*   Created: 2025/02/27 11:52:45 by spike             #+#    #+#             */
+/*   Updated: 2025/02/27 17:59:57 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int	main(int ac, char **av)
+class Contact
 {
-	std::string order;
+	private :
+		std::string	first_name;
+		std::string	name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string secret;
 
-	while (1)
-	{
-		std::cin >> order;
-		if (order == "ADD")
-		{
-		}
-		else if (order == "ADD")
-		{
+	public :
+	Contact();
 
-		}
-		else if (order == "EXIT")
-			break ;
-		else
-			continue ;
-	}
-	return (0);
+};
+
+// Constructeur test
+Contact::Contact(void)
+{
+	std::cout << "What is his first name ?" << std::endl;
+	std::cin >> first_name;
+
 }
