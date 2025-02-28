@@ -6,11 +6,11 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 11:52:45 by spike             #+#    #+#             */
-/*   Updated: 2025/02/27 17:59:57 by spike            ###   ########.fr       */
+/*   Updated: 2025/02/28 17:59:18 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "project.hpp"
 
 class Contact
 {
@@ -19,17 +19,12 @@ class Contact
 		std::string	name;
 		std::string	nickname;
 		std::string	phone_number;
-		std::string secret;
+		std::string	secret;
 
 	public :
-	Contact();
+	Contact() {}
+	Contact(std::string fname, std::string n_name, std::string n_nickname, std::string phone, std::string s_secret)
+		: first_name(fname), name(n_name), nickname(n_nickname), phone_number(phone), secret(s_secret) {}
 
 };
 
-// Constructeur test
-Contact::Contact(void)
-{
-	std::cout << "What is his first name ?" << std::endl;
-	std::cin >> first_name;
-
-}

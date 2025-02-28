@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   project.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 16:01:14 by spike             #+#    #+#             */
-/*   Updated: 2025/02/28 18:24:00 by spike            ###   ########.fr       */
+/*   Created: 2025/02/28 17:52:24 by spike             #+#    #+#             */
+/*   Updated: 2025/02/28 18:15:22 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "project.hpp"
+#ifndef PROJECT_HPP
+#define PROJECT_HPP
 
-int	main(int ac, char **av)
-{
-	PhoneBook	phone;
-	std::string order;
-	int			i = 0;
+#include <iostream>
+#include <string>
 
-	while (1)
-	{
-		std::cin >> order;
-		if (order == "ADD")
-			phone.add();
-		else if (order == "SEARCH")
-		{
-			phone.search();
-			phone.display();
-		}
-		else if (order == "EXIT")
-			break ;
-		else
-			continue ;
-	}
-	return (0);
-}
+#include "contact.hpp"
+#include "PhoneBook.hpp"
+
+#endif
