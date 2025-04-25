@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 16:01:14 by spike             #+#    #+#             */
-/*   Updated: 2025/03/03 15:57:15 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/24 15:07:01 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 int	main()
 {
 	PhoneBook	phone;
+	phone.setIndex(-1);
 	std::string	order;
-	std::string	index;
+	int i = -1;
 
 	std::cout << "Welcome to your PhoneBook !" << std::endl;
 	while (1)
@@ -25,14 +26,19 @@ int	main()
 		std::cin >> order;
 		if (order == "ADD")
 		{
+			i++;
+			phone.setIndex(i);
 			std::cin.ignore();
 			phone.add();
 		}
 		else if (order == "SEARCH")
 		{
 			std::cin.ignore();
-			phone.search();
-			phone.display();
+			int j = phone.search();
+			if (j == -1)
+				std::cout << "You have no contact yet !" << std::endl;
+			else
+				phone.display();
 		}
 		else if (order == "EXIT")
 			break ;

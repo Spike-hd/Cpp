@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 16:01:14 by spike             #+#    #+#             */
-/*   Updated: 2025/02/24 16:26:14 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/24 14:14:24 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ int	main(int ac, char **av)
 	}
 	for (int i = 1; i < ac; i++)
 	{
-		for (size_t j = 0; j < strlen(av[i]); j++)
+		std::string str = av[i];
+		for (size_t j = 0; j < str.size(); j++)
 		{
-			char c = toupper(av[i][j]);
+			char c = std::toupper(av[i][j]);
 			std::cout << c;
 		}
 	}
