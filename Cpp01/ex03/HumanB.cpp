@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 09:35:51 by spike             #+#    #+#             */
-/*   Updated: 2025/03/06 10:19:58 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/28 13:15:34 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 HumanB::HumanB(std::string nname)
 {
 	name = nname;
-	weapon = nullptr;
 }
 
 void	HumanB::setWeapon(Weapon &wweapon)

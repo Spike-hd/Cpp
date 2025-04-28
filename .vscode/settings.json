@@ -48,6 +48,9 @@
 		"variant": "cpp",
 		"vector": "cpp",
 		"algorithm": "cpp",
-		"memory": "cpp"
+		"memory": "cpp",
+		"fstream": "cpp",
+		"iomanip": "cpp",
+		"sstream": "cpp"
 	}
 }
