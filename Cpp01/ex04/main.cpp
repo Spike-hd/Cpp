@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:31:32 by spike             #+#    #+#             */
-/*   Updated: 2025/04/28 13:23:52 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/28 14:39:01 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void read_and_replace(std::ifstream &file1, const std::string &s1, const std::st
 	std::string line;
 	size_t pos;
 
-	std::ofstream file2(replace_file, std::ios::out);
+	std::ofstream file2(replace_file.c_str(), std::ios::out);
 	if (!file2)
 	{
 		std::cerr << "Can't open this file !" << std::endl;
@@ -44,16 +44,18 @@ void read_and_replace(std::ifstream &file1, const std::string &s1, const std::st
 
 int	main(int ac, char **av)
 {
-	std::string filename(av[1]);
-	std::string s1(av[2]);
-	std::string s2(av[3]);
-	std::string replace_file = filename + ".replace";
-
 	if (ac != 4)
 	{
 		std::cerr << "Wrong nb of args" << std::endl;
 		return (0);
 	}
+
+	std::string filename(av[1]);
+	std::string s1(av[2]);
+	std::string s2(av[3]);
+	std::string replace_file = filename + ".replace";
+
+
 	std::ifstream file1(filename.c_str());
 	if (!file1)
 	{
