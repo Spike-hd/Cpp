@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 00:51:26 by spike             #+#    #+#             */
-/*   Updated: 2025/03/05 08:51:16 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/28 13:06:04 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <iomanip>
 
 class Zombie
 {
