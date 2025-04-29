@@ -6,15 +6,15 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:19:17 by spike             #+#    #+#             */
-/*   Updated: 2025/04/16 17:45:12 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/28 15:41:35 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fixed.hpp"
 
-Fixed::Fixed()
+
+Fixed::Fixed() : nb(0)
 {
-	nb = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 

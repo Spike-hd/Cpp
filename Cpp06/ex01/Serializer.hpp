@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.hpp                                          :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 17:50:58 by spike             #+#    #+#             */
-/*   Updated: 2025/04/28 15:41:50 by spike            ###   ########.fr       */
+/*   Created: 2025/04/28 17:17:00 by spike             #+#    #+#             */
+/*   Updated: 2025/04/28 17:29:59 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 
 #include <iostream>
-#include <string>
+#include "Data.hpp"
+#include <cstdint>
 
-class Fixed
+
+
+
+class Serializer
 {
 	private :
-		int					nb;
-		static const int	bits = 8;
+		Serializer();
+		Serializer(Serializer const &other);
+		Serializer	&operator=(Serializer const &other);
+		~Serializer();
 
 	public :
-		Fixed();
-		Fixed(const Fixed &f);
-		Fixed &operator=(const Fixed &f);
-		~Fixed();
-
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		static uintptr_t	serialize(Data *ptr);
+		static Data*		deserialize(uintptr_t raw);
 };
 
 #endif

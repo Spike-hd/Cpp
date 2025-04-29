@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.hpp                                          :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 17:50:58 by spike             #+#    #+#             */
-/*   Updated: 2025/04/28 15:41:50 by spike            ###   ########.fr       */
+/*   Created: 2025/04/28 17:21:59 by spike             #+#    #+#             */
+/*   Updated: 2025/04/28 17:29:35 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef DATA_HPP
+#define DATA_HPP
 
-#include <iostream>
 #include <string>
 
-class Fixed
+struct Data
 {
-	private :
-		int					nb;
-		static const int	bits = 8;
-
-	public :
-		Fixed();
-		Fixed(const Fixed &f);
-		Fixed &operator=(const Fixed &f);
-		~Fixed();
-
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+	int			nb;
+	std::string	str;
 };
 
 #endif
+
