@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 14:16:18 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 13:21:04 by spike            ###   ########.fr       */
+/*   Created: 2025/04/29 13:54:40 by spike             #+#    #+#             */
+/*   Updated: 2025/04/29 13:56:11 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef B_HPP
+#define B_HPP
 
-int main()
+#include "Base.hpp"
+
+class B : public Base
 {
-	ScavTrap scav("Scav");
+	public :
+		B();
+		~B();
 
-	scav.attack("Bad_Robot");
-	scav.takeDamage(20);
-	scav.beRepaired(15);
+};
 
-	scav.guardGate();
-
-	return 0;
-}
-
+#endif

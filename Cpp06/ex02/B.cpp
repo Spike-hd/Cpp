@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   B.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 14:16:18 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 13:21:04 by spike            ###   ########.fr       */
+/*   Created: 2025/04/29 13:54:16 by spike             #+#    #+#             */
+/*   Updated: 2025/04/29 13:54:30 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "B.hpp"
 
-int main()
-{
-	ScavTrap scav("Scav");
+B::B()
+{ std::cout << "B created" << std::endl; }
 
-	scav.attack("Bad_Robot");
-	scav.takeDamage(20);
-	scav.beRepaired(15);
-
-	scav.guardGate();
-
-	return 0;
-}
-
+B::~B()
+{ std::cout << "B delated" << std::endl; }

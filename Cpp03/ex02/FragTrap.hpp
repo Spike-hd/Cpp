@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:37:27 by spike             #+#    #+#             */
-/*   Updated: 2025/04/21 16:50:39 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/29 13:26:26 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,24 +67,16 @@ FragTrap::~FragTrap()
 	std::cout << "Destructor called for FragTrap" << std::endl;
 }
 
-void	FragTrap::highFivesGuys()
-{
-	std::cout << "We got this high Five guys !" << std::endl;
-}
-
-
 // methodes
 
 void	FragTrap::attack(const std::string& target)
 {
-	if (this->getHp() > 0)
+	if (hp > 0)
 	{
-		int mana = this->getMana();
 		if (mana > 0)
 		{
-			std::cout << "FragTrap " << this->getName() << " attacks " << target << ", causing " << this->getAd() << " points of damage!" << std::endl;
+			std::cout << "FragTrap " << name << " attacks " << target << ", causing " << ad << " points of damage!" << std::endl;
 			mana--;
-			this->setMana(mana);
 		}
 		else
 			std::cout << "Biip Boop, no energy to attack Biiip Boop" << std::endl;
@@ -93,6 +85,11 @@ void	FragTrap::attack(const std::string& target)
 	{
 		std::cout << "Actually talking to you from the heaven, wtf are you doing ?" << std::endl;
 	}
+}
+
+void	FragTrap::highFivesGuys()
+{
+	std::cout << "We got this!\nHigh Five guys !" << std::endl;
 }
 
 
