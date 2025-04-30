@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 16:50:20 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 15:28:01 by spike            ###   ########.fr       */
+/*   Created: 2025/04/29 19:03:22 by spike             #+#    #+#             */
+/*   Updated: 2025/04/29 19:11:22 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-#define WEAPON_H
-
-#include <iostream>
-#include <string>
-
-class Weapon
+template <typename T>
+void	swap(T a, T b)
 {
-	private :
-		std::string type;
+	T c = a;
+	a = b;
+	b = c;
+}
 
-	public :
-		Weapon(): type("") {}
-		Weapon(std::string ttype);
-		const std::string &getType();
-		void setType(std::string ttype);
-		~Weapon();
-};
+template <typename T>
+T	min(T a, T b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-
-#endif
+template <typename T>
+T	max(T a, T b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}

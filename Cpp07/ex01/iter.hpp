@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 16:50:20 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 15:28:01 by spike            ###   ########.fr       */
+/*   Created: 2025/04/29 19:21:51 by spike             #+#    #+#             */
+/*   Updated: 2025/04/29 19:29:56 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-#define WEAPON_H
+#include <cstddef>
 
-#include <iostream>
-#include <string>
-
-class Weapon
+template <typename T>
+void	iter(T *addr, size_t size, void (*fct)(T&))
 {
-	private :
-		std::string type;
-
-	public :
-		Weapon(): type("") {}
-		Weapon(std::string ttype);
-		const std::string &getType();
-		void setType(std::string ttype);
-		~Weapon();
-};
-
-
-#endif
+	for (size_t i = 0; i < len; i++)
+		func(addr[i]);
+}
