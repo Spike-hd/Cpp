@@ -6,18 +6,18 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:19:59 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 13:26:01 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/30 14:50:47 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name("Untitled"), hp(10), mana(10), ad(0), mana_max(10)
+ClapTrap::ClapTrap() : name("Untitled"), hp(10), mana(10), mana_max(10), ad(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string nname) : name(nname), hp(10), mana(10), ad(0), mana_max(10)
+ClapTrap::ClapTrap(std::string nname) : name(nname), hp(10), mana(10), mana_max(10), ad(0)
 {
 	std::cout << "Constructor for " << name << " called" << std::endl;
 }
