@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 13:08:07 by spike             #+#    #+#             */
-/*   Updated: 2025/04/23 13:10:02 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/05 14:42:48 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Dog : public Animal
 {
 	private :
-		Brain *_brain;
+		Brain	*_brain;
 	public :
 		// Colpien
 		Dog();
@@ -28,6 +28,7 @@ class Dog : public Animal
 		~Dog();
 
 		void	makeSound() const;
+		void	showIdea(unsigned int i) const;
 };
 
 #endif

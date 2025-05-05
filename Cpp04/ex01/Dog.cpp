@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:47:31 by spike             #+#    #+#             */
-/*   Updated: 2025/04/23 13:10:53 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/05 15:22:21 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Dog::Dog() : Animal("Dog")
 {
+	_brain = new Brain();
 	std::cout << "Dog constructor called" << std::endl;
 }
 
@@ -44,4 +45,12 @@ Dog::~Dog()
 void	Dog::makeSound() const
 {
 	std::cout << "Wouaf wouaf" << std::endl;
+}
+
+void	Dog::showIdea(unsigned int i) const
+{
+	if (i >= 100)
+		i %= 100;
+	std::string msg = this->_brain->getIdea(i);
+	std::cout << "The dog is : " << msg << std::endl;
 }

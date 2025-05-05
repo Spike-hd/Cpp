@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   Wron WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 13:03:27 by spike             #+#    #+#             */
-/*   Updated: 2025/04/22 16:15:40 by spike            ###   ########.fr       */
+/*   Created: 2025/04/22 16:03:49 by spike             #+#    #+#             */
+/*   Updated: 2025/04/22 16:03:49 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class AAnimal
+class WrongAnimal
 {
 	private :
 		std::string _type;
 
 	public :
 		// Colpien
-		AAnimal();
-		AAnimal(std::string type);
-		AAnimal(const AAnimal &other);
-		AAnimal &operator=(const AAnimal &other);
-		virtual ~AAnimal();
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal &other);
+		WrongAnimal &operator=(const WrongAnimal &other);
+		~WrongAnimal();
 
-		// Fonction virtuelle pure ⇒ rend la classe abstraite
-		virtual void	makeSound() const = 0;
+		void			makeSound() const;
 		std::string		getType() const;
 };
 

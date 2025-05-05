@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:52:12 by spike             #+#    #+#             */
-/*   Updated: 2025/05/05 12:47:32 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/05 13:05:30 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,26 @@
 ScavTrap::ScavTrap()
 {
 	setScavTrap();
+	std::cout << "Default constructor called for ScavTrap" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string nname) : ClapTrap(nname)
 {
 	setScavTrap();
+	std::cout << "Constructor with name called for ScavTrap" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
 	setScavTrap();
+	std::cout << "Copy constructor called for ScavTrap" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
 	if (this != &other)
 	{
+		std::cout << "Copy assignment operator called for ScavTrap" << std::endl;
 		ClapTrap::operator=(other);
 		setScavTrap();
 	}

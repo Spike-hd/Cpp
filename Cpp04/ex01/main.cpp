@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 13:11:56 by spike             #+#    #+#             */
-/*   Updated: 2025/05/05 14:42:40 by spike            ###   ########.fr       */
+/*   Created: 2025/04/22 15:45:01 by spike             #+#    #+#             */
+/*   Updated: 2025/05/05 15:22:52 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
 #include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-class Cat : public Animal
+int main()
 {
-	private :
-		Brain *_brain;
-	public :
-		// Colpien
-		Cat();
-		Cat(const Cat &other);
-		Cat &operator=(const Cat &other);
-		~Cat();
+	const int size = 6;
+	Animal* animals[size];
 
-		void	makeSound() const;
-		void	showIdea(unsigned int i) const;
-};
+	for (int i = 0; i < size / 2; ++i) {
+		animals[i] = new Dog();
+	}
+	for (int i = size / 2; i < size; ++i) {
+		animals[i] = new Cat();
+	}
+	animals[1]->showIdea(9);
+	animals[3]->showIdea(6);
 
-#endif
+	for (int i = 0; i < size; ++i) {
+		delete animals[i];
+	}
+
+	return 0;
+}
+
+
+
+
+

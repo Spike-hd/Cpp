@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongWrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 13:11:56 by spike             #+#    #+#             */
-/*   Updated: 2025/05/05 14:42:40 by spike            ###   ########.fr       */
+/*   Created: 2025/04/22 16:10:07 by spike             #+#    #+#             */
+/*   Updated: 2025/04/22 16:10:07 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "WrongCat.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+WrongCat::WrongCat() : WrongAnimal("WrongCat") {}
 
-class Cat : public Animal
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other) {}
+
+WrongCat	&WrongCat::operator=(const WrongCat &other)
 {
-	private :
-		Brain *_brain;
-	public :
-		// Colpien
-		Cat();
-		Cat(const Cat &other);
-		Cat &operator=(const Cat &other);
-		~Cat();
+	if (this != &other)
+	{
+		WrongAnimal::operator=(other);
+	}
+	return (*this);
+}
 
-		void	makeSound() const;
-		void	showIdea(unsigned int i) const;
-};
+WrongCat::~WrongCat() {}
 
-#endif
+void	WrongCat::makeSound() const
+{
+	std::cout << "Miaouuuuuuu" << std::endl;
+}

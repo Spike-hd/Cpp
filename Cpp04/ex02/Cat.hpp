@@ -6,17 +6,17 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 13:11:56 by spike             #+#    #+#             */
-/*   Updated: 2025/04/22 16:42:59 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/05 14:17:11 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 	private :
 		Brain *_brain;
@@ -28,7 +28,7 @@ class Cat : public Animal
 		~Cat();
 
 		void	makeSound() const;
-
+		void	showIdea(unsigned int i) const;
 };
 
 #endif
