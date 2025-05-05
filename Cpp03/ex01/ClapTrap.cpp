@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:19:59 by spike             #+#    #+#             */
-/*   Updated: 2025/04/30 14:58:57 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/05 12:54:23 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 	{
-		std::cout << "Mayday, we just lost " << hp - amount << " hp !!" << std::endl;
+		std::cout << "Mayday, we just lost " << amount << " hp !!" << std::endl;
 		hp -= amount;
 	}
 }
