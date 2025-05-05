@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:16:18 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 13:28:52 by spike            ###   ########.fr       */
+/*   Updated: 2025/04/30 15:02:30 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	ScavTrap scav("Scavvy");
+	ScavTrap scav("s");
 	FragTrap frag("Fraggy");
 
 	std::cout << "\n--- SCAVTRAP ACTIONS ---\n";

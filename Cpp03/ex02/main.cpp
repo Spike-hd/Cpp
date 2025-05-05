@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:16:18 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 13:28:52 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/02 13:07:04 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 int main()
 {
-	ScavTrap scav("Scavvy");
-	FragTrap frag("Fraggy");
+	ScavTrap scav("Scav");
+	FragTrap frag("Frag");
 
 	std::cout << "\n--- SCAVTRAP ACTIONS ---\n";
-	scav.attack("Fraggy");
+	scav.attack("Frag");
 	frag.takeDamage(20);
 	scav.guardGate();
 
 	std::cout << "\n--- FRAGTRAP ACTIONS ---\n";
-	frag.attack("Scavvy");
+	frag.attack("Scav");
 	scav.takeDamage(30);
 	frag.highFivesGuys();
 

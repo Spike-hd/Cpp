@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:21:51 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 19:29:56 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/01 15:06:07 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 template <typename T>
 void	iter(T *addr, size_t size, void (*fct)(T&))
 {
-	for (size_t i = 0; i < len; i++)
-		func(addr[i]);
+	for (size_t i = 0; i < size; i++)
+		fct(addr[i]);
 }

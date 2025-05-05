@@ -1,36 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 16:37:27 by spike             #+#    #+#             */
-/*   Updated: 2025/04/30 14:59:56 by spike            ###   ########.fr       */
+/*   Created: 2025/05/01 16:59:37 by spike             #+#    #+#             */
+/*   Updated: 2025/05/01 17:17:09 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
-
-#include <iostream>
-#include <string>
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+template <typename T>
+typename T::iterator	easyfind(T& container, int val)
 {
-	public :
-		// Colpien
-		FragTrap();
-		FragTrap(std::string nname);
-		FragTrap(const FragTrap &t);
-		FragTrap &operator=(const FragTrap &t);
-		~FragTrap();
-
-		// methodes
-		void	attack(const std::string& target);
-		void	highFivesGuys();
-};
-
-
-#endif
+	 return (std::find(container.begin(), container.end(), val));
+}
