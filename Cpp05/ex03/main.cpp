@@ -6,52 +6,67 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:57:06 by spike             #+#    #+#             */
-/*   Updated: 2025/04/26 11:32:28 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 12:34:26 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 
-int	main()
+int main()
 {
 	try
 	{
-		Bureaucrat a("Sabrina", 10);
-		Bureaucrat b("Michel", 160);
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
+		Intern someRandomIntern;
+		AForm *form;
+
+
+		std::cout << "\n--- Création d'un formulaire valide ---\n";
+		form = someRandomIntern.makeForm("ShrubberyCreationForm", "Garden");
+		if (form)
+		{
+			Bureaucrat bob("Bob", 1);
+			form->beSigned(bob);
+			form->execute(bob);
+			delete form;
+		}
+
+		std::cout << std::endl;
+
+		std::cout << "\n--- Création d'un formulaire invalide ---\n";
+		AForm *unknown = someRandomIntern.makeForm("Taxe et profit", "Societe");
+		if (unknown)
+			delete unknown;
+
+		std::cout << std::endl;
+
+		// Autres types
+		AForm *robotForm = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+		AForm *pardonForm = someRandomIntern.makeForm("PresidentialPardonForm", "Fry");
+
+		Bureaucrat bruno("Bruno", 5);
+
+		if (robotForm)
+		{
+			robotForm->beSigned(bruno);
+			robotForm->execute(bruno);
+			delete robotForm;
+		}
+
+		if (pardonForm)
+		{
+			pardonForm->beSigned(bruno);
+			pardonForm->execute(bruno);
+			delete pardonForm;
+		}
 	}
-	catch (const std::invalid_argument &str)
+	catch (std::exception &e)
 	{
-		std::cerr << "Error : " << str.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
-	try
-	{
-		Bureaucrat a("Sabrina", 10);
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat a("Seb", 1);
-		a.incr();
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat a("Seb", 150);
-		a.decr();
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
+
+	return 0;
 }
+
+

@@ -6,13 +6,13 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:50:16 by spike             #+#    #+#             */
-/*   Updated: 2025/04/26 20:50:35 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 11:08:37 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubberry", false, 145, 137), _target("home") {}
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubberry", false, 145, 137), _target("empty") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubberry", false, 145, 137), _target(target) {}
 

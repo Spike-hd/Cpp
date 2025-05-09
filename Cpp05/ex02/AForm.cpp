@@ -120,3 +120,12 @@ void	AForm::SignAForm(Bureaucrat &b)
 	_isSigned = true;
 	std::cout << b.getName() << " signed " << this->getName() << std::endl;
 }
+
+
+void	AForm::checkForExecute(Bureaucrat &b) const
+{
+	if (this->getisSigned() == false)
+		throw FormNotSignedException();
+	if (b.getGrade() > this->getExecGrade())
+		throw GradeTooLowException();
+}

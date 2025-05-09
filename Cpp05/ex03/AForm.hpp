@@ -30,7 +30,7 @@ class AForm
 		AForm(std::string const name, bool isSigned, int signGrade, int execGrade);
 		AForm(AForm const &other);
 		AForm	&operator=(AForm const &other);
-		~AForm();
+		virtual ~AForm();
 
 		//Classe d'exception
 		class GradeTooHighException : public std::exception
@@ -74,13 +74,6 @@ class AForm
 
 std::ostream	&operator<<(std::ostream &o, AForm &f);
 
-void	AForm::checkForExecute(Bureaucrat &b) const
-{
-	if (this->getisSigned() == false)
-		throw FormNotSignedException();
-	if (b.getGrade() > this->getExecGrade())
-		throw GradeTooLowException();
 
-}
 #endif
 

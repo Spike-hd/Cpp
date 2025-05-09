@@ -6,52 +6,57 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:57:06 by spike             #+#    #+#             */
-/*   Updated: 2025/04/26 11:32:28 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 11:16:58 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int	main()
+int main()
 {
-	try
-	{
-		Bureaucrat a("Sabrina", 10);
-		Bureaucrat b("Michel", 160);
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
+	try {
+			Bureaucrat boss("Alice", 1);
+			Bureaucrat noobie("Bob", 150);
+
+			ShrubberyCreationForm shrubForm("forest");
+			RobotomyRequestForm robotForm("Bender");
+			PresidentialPardonForm pardonForm("Marvin");
+
+			std::cout << "\n--- Tentative d'exécution sans signature ---\n";
+			try {
+				shrubForm.execute(boss); // Doit échouer (non signé)
+			}
+			catch (const std::exception &e) {
+				std::cout << "Erreur: " << e.what() << std::endl;
+			}
+
+			std::cout << "\n--- Signature des formulaires par Alice ---\n";
+			shrubForm.beSigned(boss);
+			robotForm.beSigned(boss);
+			pardonForm.beSigned(boss);
+
+			std::cout << "\n--- Tentative d'exécution par l'interne ---\n";
+			try {
+				shrubForm.execute(noobie); // Trop bas en grade
+			}
+			catch (const std::exception &e) {
+				std::cout << "Erreur: " << e.what() << std::endl;
+			}
+
+			std::cout << "\n--- Exécution par Alice ---\n";
+			shrubForm.execute(boss);
+			robotForm.execute(boss);
+			pardonForm.execute(boss);
+		}
+		catch (const std::exception &e) {
+			std::cout << "Fatal error: " << e.what() << std::endl;
 	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat a("Sabrina", 10);
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat a("Seb", 1);
-		a.incr();
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat a("Seb", 150);
-		a.decr();
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
+
+	return 0;
 }
+
+
