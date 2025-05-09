@@ -6,52 +6,44 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:57:06 by spike             #+#    #+#             */
-/*   Updated: 2025/04/26 11:32:28 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 13:11:47 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 
-int	main()
-{
-	try
-	{
-		Bureaucrat a("Sabrina", 10);
-		Bureaucrat b("Michel", 160);
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
+
+int main() {
+	try {
+		Bureaucrat high("Alice", 1);
+		Bureaucrat low("Bob", 150);
+
+		Form contract("NDA Contract", false, 50, 20);
+
+		std::cout << high << std::endl;
+		std::cout << low << std::endl;
+		std::cout << contract << std::endl;
+
+		std::cout << "\n--- Attempting to sign with low-grade bureaucrat ---\n";
+		contract.beSigned(low); // devrait échouer
+
+	} catch (std::exception &e) {
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
+
+	std::cout << "\n--- Trying again with a high-grade bureaucrat ---\n";
+	try {
+		Bureaucrat high("Alice", 1);
+		Form contract("NDA Contract", false, 50, 20);
+
+		contract.beSigned(high); // devrait réussir
+		std::cout << contract << std::endl;
+
+	} catch (std::exception &e) {
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
-	try
-	{
-		Bureaucrat a("Sabrina", 10);
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat a("Seb", 1);
-		a.incr();
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat a("Seb", 150);
-		a.decr();
-		std::cout << a << std::endl;
-	}
-	catch (const std::invalid_argument &str)
-	{
-		std::cerr << "Error : " << str.what() << std::endl;
-	}
+
+	return 0;
 }
+

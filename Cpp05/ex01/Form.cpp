@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:33:28 by spike             #+#    #+#             */
-/*   Updated: 2025/04/26 18:09:39 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 13:24:49 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,10 @@ const char *Form::FormAlreadySigned::what() const throw()
 {
 	return (_msg.c_str());
 }
+
+Form::FormAlreadySigned::~FormAlreadySigned() throw() {}
+
+
 
 
 

@@ -8,11 +8,11 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Fichiers sources et objets
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Header global
-HEADERS = Bureaucrat.hpp
+HEADERS = Bureaucrat.hpp Form.hpp
 
 # Règle principale
 all: $(NAME)

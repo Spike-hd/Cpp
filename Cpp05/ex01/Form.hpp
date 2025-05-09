@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 11:47:07 by spike             #+#    #+#             */
-/*   Updated: 2025/04/26 16:34:53 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 13:23:45 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ class Form
 			public :
 				FormAlreadySigned(std::string const &name) throw();
 				const char	*what() const throw();
+				~FormAlreadySigned() throw();
+
 		};
 
 		// getters
