@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:42:18 by spike             #+#    #+#             */
-/*   Updated: 2025/05/09 12:39:09 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 13:06:21 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ AForm	*Intern::makeForm(const std::string &FormName, const std::string &target)
 	else
 	{
 		std::cerr << "Error: unknown form name \"" << FormName << "\"" << std::endl;
-		return (nullptr);
+		return (NULL);
 	}
 }
