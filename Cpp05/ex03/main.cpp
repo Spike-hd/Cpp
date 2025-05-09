@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:57:06 by spike             #+#    #+#             */
-/*   Updated: 2025/05/09 12:34:26 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 12:47:20 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 		AForm *form;
 
 
-		std::cout << "\n--- Création d'un formulaire valide ---\n";
+		std::cout << "\n--- Creation of a valid form ---\n";
 		form = someRandomIntern.makeForm("ShrubberyCreationForm", "Garden");
 		if (form)
 		{
@@ -34,7 +34,7 @@ int main()
 
 		std::cout << std::endl;
 
-		std::cout << "\n--- Création d'un formulaire invalide ---\n";
+		std::cout << "\n--- Creation of an unvalid form ---\n";
 		AForm *unknown = someRandomIntern.makeForm("Taxe et profit", "Societe");
 		if (unknown)
 			delete unknown;

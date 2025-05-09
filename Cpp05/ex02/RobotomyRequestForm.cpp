@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:47:37 by spike             #+#    #+#             */
-/*   Updated: 2025/04/26 20:47:51 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 12:47:44 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	RobotomyRequestForm::execute(Bureaucrat &b) const
 	std::cout << "Brr...." << std::endl;
 	std::cout << "Brr...." << std::endl;
 	std::cout << "Brr...." << std::endl;
-	if (rand() % 2)
+	int i = rand();
+	if (i % 2)
 		std::cout << _target << " has been successfully robotomized!" << std::endl;
 	else
 		std::cout << "The robotomization on " << _target << " failed!" << std::endl;

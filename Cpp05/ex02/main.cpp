@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:57:06 by spike             #+#    #+#             */
-/*   Updated: 2025/05/09 11:16:58 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/09 12:46:39 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ int main()
 			RobotomyRequestForm robotForm("Bender");
 			PresidentialPardonForm pardonForm("Marvin");
 
-			std::cout << "\n--- Tentative d'exécution sans signature ---\n";
+			std::cout << "\n--- Try exec without signature ---\n";
 			try {
-				shrubForm.execute(boss); // Doit échouer (non signé)
+				shrubForm.execute(boss);
 			}
 			catch (const std::exception &e) {
 				std::cout << "Erreur: " << e.what() << std::endl;
 			}
 
-			std::cout << "\n--- Signature des formulaires par Alice ---\n";
+			std::cout << "\n--- Signature of the forms from Alice ---\n";
 			shrubForm.beSigned(boss);
 			robotForm.beSigned(boss);
 			pardonForm.beSigned(boss);
 
-			std::cout << "\n--- Tentative d'exécution par l'interne ---\n";
+			std::cout << "\n--- Try exec from unauthorized person ---\n";
 			try {
 				shrubForm.execute(noobie); // Trop bas en grade
 			}
@@ -47,7 +47,7 @@ int main()
 				std::cout << "Erreur: " << e.what() << std::endl;
 			}
 
-			std::cout << "\n--- Exécution par Alice ---\n";
+			std::cout << "\n--- Exec from Alice (the boss)---\n";
 			shrubForm.execute(boss);
 			robotForm.execute(boss);
 			pardonForm.execute(boss);
