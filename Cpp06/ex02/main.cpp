@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:59:24 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 18:59:42 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/11 13:13:19 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 Base* generate()
 {
-	std::srand(std::time(0));
 	int i = std::rand() % 3;
 
 	switch (i)
@@ -63,7 +62,26 @@ void identify(Base& p)
 	std::cout << "C" << std::endl;
 }
 
-int	main()
-{
 
+int main()
+{
+	std::srand(std::time(0));
+
+	std::cout << "Identifying with pointers:\n" << std::endl;
+	for (int i = 0; i < 5; ++i) {
+		Base* base = generate();
+		std::cout << "identified as : ";
+		identify(base);
+		delete base;
+	}
+
+	std::cout << "\nIdentifying with references:\n" << std::endl;
+	for (int i = 0; i < 5; ++i) {
+		Base* base = generate();
+		std::cout << "identified as : ";
+		identify(*base);
+		delete base;
+	}
+
+	return 0;
 }

@@ -6,14 +6,12 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:50:52 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 13:53:50 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/11 13:11:48 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "A.hpp"
 
-A::A()
-{ std::cout << "A created" << std::endl; }
+A::A() {std::cout << "A created" << std::endl;}
 
-A::~A()
-{ std::cout << "A delated" << std::endl; }
+A::~A() {}

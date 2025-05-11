@@ -6,14 +6,12 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:54:16 by spike             #+#    #+#             */
-/*   Updated: 2025/04/29 13:54:30 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/11 13:11:32 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "B.hpp"
 
-B::B()
-{ std::cout << "B created" << std::endl; }
+B::B() {std::cout << "B created" << std::endl;}
 
-B::~B()
-{ std::cout << "B delated" << std::endl; }
+B::~B() {}

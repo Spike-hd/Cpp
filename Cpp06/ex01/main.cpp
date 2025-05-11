@@ -5,31 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 15:57:06 by spike             #+#    #+#             */
-/*   Updated: 2025/05/09 15:28:38 by spike            ###   ########.fr       */
+/*   Created: 2025/05/11 12:45:39 by spike             #+#    #+#             */
+/*   Updated: 2025/05/11 12:59:17 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include <stdint.h>
+#include "Data.hpp"
+#include "Serializer.hpp"
 
 int main()
 {
+	Data		*data = new Data;
+	uintptr_t	int_addr;
 
-			Bureaucrat boss("Alice", 1);
+	std::cout << "Original adress for the pointer Data : " << data << std::endl;
 
+	int_addr = Serializer::serialize(data);
+	std::cout << "Original adress converted in an int : " << int_addr << std::endl;
 
-			ShrubberyCreationForm shrubForm("forest");
+	data = Serializer::deserialize(int_addr);
+	std::cout << "Now, back to a pointer address : " << data << std::endl;
 
-			shrubForm.beSigned(boss);
-
-
-			shrubForm.execute(boss);
-
+	delete data;
 	return 0;
 }
-
-
