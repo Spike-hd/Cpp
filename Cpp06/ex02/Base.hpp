@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:38:34 by spike             #+#    #+#             */
-/*   Updated: 2025/05/12 13:42:18 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/12 13:44:52 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <exception>
+#include <typeinfo>
 
 class Base
 {

@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:59:24 by spike             #+#    #+#             */
-/*   Updated: 2025/05/11 13:13:19 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/12 13:45:06 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Base* generate()
 		case 2:
 			return new C();
 	}
-	return (nullptr);
+	return (NULL);
 }
 
 void identify(Base* p)
