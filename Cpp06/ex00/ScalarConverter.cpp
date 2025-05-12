@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 14:29:44 by spike             #+#    #+#             */
-/*   Updated: 2025/05/11 12:37:51 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/12 11:53:23 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,6 @@ void	display_impossible()
 	std::cout << "double: impossible" << std::endl;
 }
 
-void	display_comma(std::string str)
-{
-	long long c;
-	std::istringstream iss(str);
-	iss >> c;
-	if (c < INT_MIN || c > INT_MAX)
-	{
-		display_impossible();
-		return ;
-	}
-	if (isprint(static_cast<int>(c)))
-		std::cout << "char: '" << static_cast<char>(c) << "'" << std::endl;
-	else
-		std::cout << "char: Non displayable" << std::endl;
-	std::cout << "int: " << static_cast<int>(c) << std::endl;
-	std::cout << std::fixed << std::setprecision(1);
-	std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(c) << std::endl;
-}
-
 void	display_char(std::string str)
 {
 	char c = str[0];
@@ -50,33 +30,26 @@ void	display_char(std::string str)
 	std::cout << "double: " << static_cast<double>(c) << std::endl;
 }
 
-
-
-
-void display_int(std::string str)
+void display_nb(std::string str)
 {
-	try
-	{
-		long long val = std::stoll(str);
-		if (val < INT_MIN || val > INT_MAX)
-			throw std::out_of_range("int overflow");
+	std::istringstream iss(str);
+	double value;
+	iss >> value;
 
-		int c = static_cast<int>(val);
-		if (isprint(c))
-			std::cout << "char: '" << static_cast<char>(c) << "'" << std::endl;
-		else
-			std::cout << "char: Non displayable" << std::endl;
-		std::cout << "int: " << c << std::endl;
-		std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
-		std::cout << "double: " << static_cast<double>(c) << std::endl;
-	}
-	catch (const std::out_of_range& e)
-	{
-		std::cout << "char: impossible" << std::endl;
+
+	if (!isprint(static_cast<char>(value)) || value < 0 || value > 127)
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+
+	if (value < INT_MIN || value > INT_MAX)
 		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: impossible" << std::endl;
-		std::cout << "double: impossible" << std::endl;
-	}
+	else
+		std::cout << "int: " << static_cast<int>(value) << std::endl;
+
+	std::cout << std::defaultfloat << "float: " << static_cast<float>(value) << "f" << std::endl;
+	std::cout << std::defaultfloat << "double: " << value << std::endl;
+
 }
 
 void	display_min_inf()
@@ -157,9 +130,9 @@ void	ScalarConverter::convert(std::string input)
 	else if (input.length() == 1 && isprint(input[0]) && !isdigit(input[0]))
 		display_char(input);
 	else if (isInt(input) == true)
-		display_int(input);
+		display_nb(input);
 	else if (is_decimal_point(input) == true)
-		display_comma(input);
+		display_nb(input);
 	else
 		display_impossible();
 }
