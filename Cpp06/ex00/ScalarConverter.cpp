@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 14:29:44 by spike             #+#    #+#             */
-/*   Updated: 2025/05/12 12:56:48 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/12 13:19:41 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,29 @@ void	display_char(std::string str)
 	std::cout << "double: " << static_cast<double>(c) << std::endl;
 }
 
-void display_nb(std::string str)
+void display_int(std::string str)
+{
+	std::istringstream iss(str);
+	double value;
+	iss >> value;
+
+
+	if (!isprint(static_cast<char>(value)) || value < 0 || value > 127)
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+
+	if (value < INT_MIN || value > INT_MAX)
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << static_cast<int>(value) << std::endl;
+
+	std::cout << std::fixed << std::setprecision(1);
+	std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
+	std::cout << "double: " << value << std::endl;
+}
+
+void display_comma(std::string str)
 {
 	std::istringstream iss(str);
 	double value;
@@ -48,11 +70,8 @@ void display_nb(std::string str)
 		std::cout << "int: " << static_cast<int>(value) << std::endl;
 
 	std::cout << std::resetiosflags(std::ios::scientific | std::ios::fixed);
-    // Affichage de float sans format fixe ou scientifique
-    std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
-    // Réinitialisation des flags pour "default" sur double (si nécessaire)
-    std::cout << "double: " << value << std::endl;
-
+	std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
+	std::cout << "double: " << value << std::endl;
 }
 
 void	display_min_inf()
@@ -133,9 +152,9 @@ void	ScalarConverter::convert(std::string input)
 	else if (input.length() == 1 && isprint(input[0]) && !isdigit(input[0]))
 		display_char(input);
 	else if (isInt(input) == true)
-		display_nb(input);
+		display_int(input);
 	else if (is_decimal_point(input) == true)
-		display_nb(input);
+		display_comma(input);
 	else
 		display_impossible();
 }
