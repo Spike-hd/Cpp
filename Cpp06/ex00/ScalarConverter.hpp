@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 14:17:47 by spike             #+#    #+#             */
-/*   Updated: 2025/05/12 12:57:04 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/12 12:58:21 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <climits>
 
 class ScalarConverter
 {
