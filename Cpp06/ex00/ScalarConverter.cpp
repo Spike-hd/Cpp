@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 14:29:44 by spike             #+#    #+#             */
-/*   Updated: 2025/05/12 11:53:23 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/12 12:56:48 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,11 @@ void display_nb(std::string str)
 	else
 		std::cout << "int: " << static_cast<int>(value) << std::endl;
 
-	std::cout << std::defaultfloat << "float: " << static_cast<float>(value) << "f" << std::endl;
-	std::cout << std::defaultfloat << "double: " << value << std::endl;
+	std::cout << std::resetiosflags(std::ios::scientific | std::ios::fixed);
+    // Affichage de float sans format fixe ou scientifique
+    std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
+    // Réinitialisation des flags pour "default" sur double (si nécessaire)
+    std::cout << "double: " << value << std::endl;
 
 }
 
