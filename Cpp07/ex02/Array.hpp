@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 15:15:53 by spike             #+#    #+#             */
-/*   Updated: 2025/05/02 13:24:22 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/13 10:57:53 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Array<T>::Array(const Array &other)
 {
 	_size = other._size;
 	_array = new T[_size];
-	for (int i = 0; i < _size; i++)
+	for (unsigned int i = 0; i < _size; i++)
 		_array[i] = other._array[i];
 }
 
@@ -67,7 +67,7 @@ Array<T> &Array<T>::operator=(const Array<T>& other)
 		delete [] _array;
 		_size = other._size;
 		_array = new T[_size];
-		for (int i = 0; i < _size; i++)
+		for (unsigned int i = 0; i < _size; i++)
 			_array[i] = other._array[i];
 	}
 	return (*this);

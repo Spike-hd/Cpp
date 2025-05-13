@@ -6,13 +6,14 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:03:22 by spike             #+#    #+#             */
-/*   Updated: 2025/05/01 15:22:48 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/12 14:04:53 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 
 template <typename T>
-void	swap(T a, T b)
+void	swap(T &a, T &b)
 {
 	T c = a;
 	a = b;
