@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 15:15:53 by spike             #+#    #+#             */
-/*   Updated: 2025/05/13 10:57:53 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/13 11:04:12 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ class Array
 				const char* what() const throw();
 		};
 
-		T			&operator[](unsigned int i);
-		const T&	operator[](unsigned int i) const;
-		unsigned int size() const;
+		T				&operator[](unsigned int i);
+		const T			&operator[](unsigned int i) const;
+		unsigned int	size() const;
 };
 
 template <typename T>
-Array<T>::Array() : _array(nullptr), _size(0) {}
+Array<T>::Array() : _array(NULL), _size(0) {}
 
 template <typename T>
 Array<T>::Array(unsigned int n)
@@ -74,13 +74,20 @@ Array<T> &Array<T>::operator=(const Array<T>& other)
 }
 
 template <typename T>
-T& Array<T>::operator[](unsigned int i)
+T	&Array<T>::operator[](unsigned int i)
 {
 	if (i >= _size)
 		throw OutOfBounds();
 	return (_array[i]);
 }
 
+template <typename T>
+const T	&Array<T>::operator[](unsigned int i) const
+{
+	if (i >= _size)
+		throw OutOfBounds();
+	return (_array[i]);
+}
 
 template <typename T>
 unsigned int Array<T>::size() const
