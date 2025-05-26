@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:15:36 by spike             #+#    #+#             */
-/*   Updated: 2025/05/02 13:26:14 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/26 10:13:35 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ class MutantStack : public std::stack<T>
 		MutantStack(const MutantStack<T> &other);
 		MutantStack<T>& operator=(const MutantStack<T> &other);
 		~MutantStack();
+
+		typedef	typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::iterator const_iterator;
+
+		iterator begin();
+		iterator end();
+
+		const_iterator begin() const;
+		const_iterator end() const;
 };
 
 template <typename T>
@@ -41,5 +50,27 @@ MutantStack<T> &MutantStack<T>::operator=(const MutantStack<T>& other)
 
 template <typename T>
 MutantStack<T>::~MutantStack() {}
+
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::begin()
+{
+	return this->c.begin();
+}
+
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::end()
+{
+	return this->c.end();
+}
+
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::begin() const {
+	return std::stack<T>::c.begin();
+}
+
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::end() const {
+	return std::stack<T>::c.end();
+}
 
 #endif
