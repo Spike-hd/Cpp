@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:15:36 by spike             #+#    #+#             */
-/*   Updated: 2025/05/26 10:13:35 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/27 10:50:02 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #define MUTANTSTACK_HPP
 
 #include <iostream>
+#include <stdexcept>
+#include <iterator>
+#include <vector>
+#include <algorithm>
+#include <climits>
 
 template <typename T>
 class MutantStack : public std::stack<T>
