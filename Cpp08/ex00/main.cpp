@@ -6,11 +6,12 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 11:24:30 by spike             #+#    #+#             */
-/*   Updated: 2025/05/13 13:07:54 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/27 10:44:59 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include "easyfind.hpp"
 
