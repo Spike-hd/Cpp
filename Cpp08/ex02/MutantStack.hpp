@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:15:36 by spike             #+#    #+#             */
-/*   Updated: 2025/05/27 10:50:02 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/27 10:55:47 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <vector>
 #include <algorithm>
 #include <climits>
+#include <stack>
 
 template <typename T>
 class MutantStack : public std::stack<T>
@@ -29,8 +30,8 @@ class MutantStack : public std::stack<T>
 		MutantStack<T>& operator=(const MutantStack<T> &other);
 		~MutantStack();
 
-		typedef	typename std::stack<T>::container_type::iterator iterator;
-		typedef typename std::stack<T>::container_type::iterator const_iterator;
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
 		iterator begin();
 		iterator end();
@@ -69,12 +70,12 @@ typename MutantStack<T>::iterator MutantStack<T>::end()
 }
 
 template <typename T>
-typename MutantStack<T>::iterator MutantStack<T>::begin() const {
+typename MutantStack<T>::const_iterator MutantStack<T>::begin() const {
 	return std::stack<T>::c.begin();
 }
 
 template <typename T>
-typename MutantStack<T>::iterator MutantStack<T>::end() const {
+typename MutantStack<T>::const_iterator MutantStack<T>::end() const {
 	return std::stack<T>::c.end();
 }
 
