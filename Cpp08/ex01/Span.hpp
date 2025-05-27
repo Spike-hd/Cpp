@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:26:18 by spike             #+#    #+#             */
-/*   Updated: 2025/05/13 13:10:18 by spike            ###   ########.fr       */
+/*   Updated: 2025/05/27 10:47:31 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <iterator>
 #include <vector>
 #include <algorithm>
+#include <climits>
 
 class Span
 {
