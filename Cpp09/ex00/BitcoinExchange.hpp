@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:41:01 by spike             #+#    #+#             */
-/*   Updated: 2025/06/02 10:49:44 by spike            ###   ########.fr       */
+/*   Updated: 2025/06/02 13:57:34 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <cstdlib>
 
 class BitcoinExchange
 {
