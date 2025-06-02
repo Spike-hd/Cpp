@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 10:42:35 by spike             #+#    #+#             */
-/*   Updated: 2025/06/02 14:44:14 by spike            ###   ########.fr       */
+/*   Updated: 2025/06/02 14:48:50 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ bool	BitcoinExchange::validFloat(const std::string& value) const
 
 void	BitcoinExchange::fill_map_csv(std::string csv)
 {
-	std::ifstream file(csv);
+	std::ifstream file(csv.c_str());
 	std::string line;
 	std::string date;
 	std::string value;
@@ -108,8 +108,7 @@ void	BitcoinExchange::fill_map_csv(std::string csv)
 		}
 		if (!date.empty() && !value.empty() && validFloat(value))
 		{
-			char *end;
-			_csvData[date] = std::strtof(value.c_str(), &end);
+			_csvData[date] = std::atof(value.c_str());
 		}
 	}
 	file.close();
@@ -117,7 +116,7 @@ void	BitcoinExchange::fill_map_csv(std::string csv)
 
 void	BitcoinExchange::displayInput(std::string input)
 {
-	std::ifstream file(input);
+	std::ifstream file(input.c_str());
 	std::string line;
 	std::string date;
 	std::string value;
@@ -142,7 +141,7 @@ void	BitcoinExchange::displayInput(std::string input)
 			std::cout << "Error: with nb => " << line << std::endl;
 		else
 		{
-			float nb = std::stof(value);
+			float nb = std::atof(value.c_str());
 			if (nb < 0) {
 				std::cout << "Error: not a positive number." << std::endl;
 				continue ;
