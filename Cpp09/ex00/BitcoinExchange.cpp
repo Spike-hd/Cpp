@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 10:42:35 by spike             #+#    #+#             */
-/*   Updated: 2025/06/02 10:43:01 by spike            ###   ########.fr       */
+/*   Updated: 2025/06/02 14:44:14 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ bool	BitcoinExchange::validDate(const std::string &date) const
 			return false;
 	}
 
-	int year = std::stoi(date.substr(0, 4));
-	int month = std::stoi(date.substr(5, 2));
-	int day = std::stoi(date.substr(8, 2));
+	int year = std::atoi(date.substr(0, 4).c_str());
+	int month = std::atoi(date.substr(5, 2).c_str());
+	int day = std::atoi(date.substr(8, 2).c_str());
 	int max_days[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 	if (year < 2008 || year > 2025)
@@ -65,13 +65,24 @@ float	BitcoinExchange::getClosestRate(const std::string& date) const
 
 bool	BitcoinExchange::validFloat(const std::string& value) const
 {
-	size_t pos = 0;
-	try {
-		std::stof(value, &pos);
-	} catch (...) {
-		return false;
+	bool coma = false;
+	size_t i = 0;
+	while (value[i] == ' ')
+		i++;
+	if (value[i] == '-')
+		i++;
+	for (; i < value.size(); ++i)
+	{
+		if (std::isdigit(value[i]))
+			continue ;
+		else if (value[i] == '.' && coma == false) {
+			coma = true ;
+			continue ;
+		}
+		else
+			return false ;
 	}
-	return pos == value.size();
+	return true ;
 }
 
 void	BitcoinExchange::fill_map_csv(std::string csv)
@@ -97,7 +108,8 @@ void	BitcoinExchange::fill_map_csv(std::string csv)
 		}
 		if (!date.empty() && !value.empty() && validFloat(value))
 		{
-			_csvData[date] = std::stof(value);
+			char *end;
+			_csvData[date] = std::strtof(value.c_str(), &end);
 		}
 	}
 	file.close();
@@ -127,7 +139,7 @@ void	BitcoinExchange::displayInput(std::string input)
 		value = line.substr(pos + 1);
 
 		if (!validFloat(value))
-			std::cout << "Error: nb must be  => " << line << std::endl;
+			std::cout << "Error: with nb => " << line << std::endl;
 		else
 		{
 			float nb = std::stof(value);
