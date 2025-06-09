@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 22:05:34 by spike             #+#    #+#             */
-/*   Updated: 2025/06/02 13:50:36 by spike            ###   ########.fr       */
+/*   Updated: 2025/06/02 15:47:05 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,8 +140,10 @@ void	PmergeMe::fillAndPrint(std::string av)
 	int nb;
 	int count = 0;
 
-	if (!correctAV(av))
-		throw std::runtime_error("Error: Problem in the argument");
+	if (!correctAV(av)) {
+		std::cerr << "Bad args !" << std::endl;
+		return ;
+	}
 
 	std::cout << "Before:";
 	std::istringstream iss(av);

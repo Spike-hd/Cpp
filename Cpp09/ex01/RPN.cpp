@@ -6,7 +6,7 @@
 /*   By: spike <spike@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 22:07:15 by spike             #+#    #+#             */
-/*   Updated: 2025/06/01 22:09:42 by spike            ###   ########.fr       */
+/*   Updated: 2025/06/02 15:49:18 by spike            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ bool	RPN::validStr(std::string av)
 
 void	RPN::makeOp(char c)
 {
-	if (polish.size() < 2)
-		throw std::runtime_error("Error: Couldn't make the operation");
+	if (polish.size() < 2) {
+		std::cout << "Error: Couldn't make the operation" << std::endl;
+		return ;
+	}
 	int	b = polish.top();
 	polish.pop();
 	int	a = polish.top();
@@ -69,8 +71,10 @@ void	RPN::makeOp(char c)
 			polish.push(a * b);
 			break ;
 		case '/' :
-			if (b == 0)
-				throw std::runtime_error("Error: division by zero");
+			if (b == 0) {
+				std::cerr << "Error: Can't divide by 0" << std::endl;
+				return ;
+			}
 			polish.push(a / b);
 			break ;
 	}
